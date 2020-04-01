@@ -1,17 +1,25 @@
 import React from "react";
 import "./Contact.css";
 
-const Contact = ({ name, avatar, online }) => {
+const Contact = function(props) {
   return (
     <div className="Contact">
-      <img className="avatar" src={avatar} alt="Avatar" />
+      <img className="avatar" src={props.avatar} alt="Avatar" />
       <div>
-        <h2 className="name">{name}</h2>
+        <h2 className="name">{props.name}</h2>
         <div className="status">
-          <div
-            className={online === "online" ? "status-online" : "status-offline"}
-          />
-          <div className="status-text">{online}</div>
+          <div>
+            {props.online === true ? (
+              <div className="status-online" />
+            ) : (
+              <div className="status-offline" />
+            )}
+            {props.online === true ? (
+              <div className="status-text">Online</div>
+            ) : (
+              <div className="status-text">Offline</div>
+            )}
+          </div>
         </div>
       </div>
     </div>

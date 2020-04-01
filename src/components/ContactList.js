@@ -1,12 +1,11 @@
 import React from "react";
-import Contact from './Contact'
-import React from "react";
+import Contact from "./Contact";
 
 const users = [
   {
     name: "Robert Reyes",
     avatar: "https://randomuser.me/api/portraits/men/28.jpg",
-    online: false
+    online: true
   },
   {
     name: "Nellie Caldwell",
@@ -30,13 +29,9 @@ const users = [
   }
 ];
 
-const ContactList = () => (
-  users.map(props =>(
-  <Contact
-  name = {props.name}
-  avatar = {props.avatar}
-  online = {props.online}/>
-  )))
-  
+const ContactList = () =>
+  users.map(props => (
+    <Contact name={props.name} avatar={props.avatar} online={props.online} />
+  ));
 
 export default ContactList;
